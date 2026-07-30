@@ -1,22 +1,7 @@
 // Year
 document.getElementById('year').textContent = new Date().getFullYear();
 
-// Mobile menu
-const toggle = document.querySelector('.nav-toggle');
-const mobileMenu = document.querySelector('.mobile-menu');
-if (toggle) {
-  toggle.addEventListener('click', () => {
-    const open = mobileMenu.hidden;
-    mobileMenu.hidden = !open;
-    toggle.setAttribute('aria-expanded', String(open));
-  });
-  mobileMenu.querySelectorAll('a').forEach(a =>
-    a.addEventListener('click', () => {
-      mobileMenu.hidden = true;
-      toggle.setAttribute('aria-expanded', 'false');
-    })
-  );
-}
+// Mobile menu removed — top nav tabs remain visible and wrap on small screens.
 
 // Tabs
 const tabs = document.querySelectorAll('.tab');
@@ -100,7 +85,7 @@ const observer = new IntersectionObserver(
   entries => entries.forEach(en => { if (en.isIntersecting) { en.target.style.opacity = 1; en.target.style.transform = 'none'; observer.unobserve(en.target); } }),
   { threshold: 0.12 }
 );
-document.querySelectorAll('.service-card, .step, .partner-perks li, .contact-method').forEach(el => {
+document.querySelectorAll('.service-card, .step, .partner-perks li, .contact-method, .team-card').forEach(el => {
   el.style.opacity = 0;
   el.style.transform = 'translateY(16px)';
   el.style.transition = 'opacity .5s ease, transform .5s ease';

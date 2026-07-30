@@ -74,10 +74,6 @@ img{max-width:100%}
 .site-nav a::after{content:"";position:absolute;left:0;bottom:-2px;width:0;height:2px;background:var(--teal);transition:.2s}
 .site-nav a:hover::after{width:100%}
 .nav-cta{margin-left:0}
-.nav-toggle{display:none;flex-direction:column;gap:5px;background:none;border:none;cursor:pointer;padding:6px}
-.nav-toggle span{width:24px;height:2px;background:var(--navy);border-radius:2px;transition:.2s}
-.mobile-menu{display:flex;flex-direction:column;padding:.5rem 24px 1rem;border-bottom:1px solid var(--line);background:var(--cream)}
-.mobile-menu a{padding:.7rem 0;font-weight:500;border-bottom:1px solid var(--line)}
 
 /* Hero */
 .hero{padding:clamp(3rem,7vw,5.5rem) 0 clamp(2.5rem,5vw,4rem);
@@ -120,41 +116,31 @@ img{max-width:100%}
 .section-sub{color:var(--muted);font-size:1.06rem}
 
 /* About */
-.about-grid{display:grid;grid-template-columns:.85fr 1.15fr;gap:3rem;align-items:center}
-.about-photo{position:relative;display:flex;justify-content:center}
-.photo-frame{
-  position:relative;border-radius:50%;overflow:hidden;border:5px solid var(--white);
-  box-shadow:var(--shadow),0 0 0 1px var(--line);aspect-ratio:1/1;background:var(--white);
-  width:min(340px,80%);
-}
-.photo-frame img{width:100%;height:100%;object-fit:cover;display:block}
-.photo-placeholder{
-  width:100%;height:100%;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:.6rem;
-  background:
-    radial-gradient(420px 320px at 30% 20%,rgba(31,138,118,.18),transparent 60%),
-    linear-gradient(160deg,var(--navy),var(--navy-700));color:#eaf1f4;
-}
-.photo-initials{
-  font-family:"Fraunces",serif;font-size:3.4rem;font-weight:700;color:#fff;
-  width:120px;height:120px;border-radius:50%;display:flex;align-items:center;justify-content:center;
-  background:rgba(255,255,255,.08);border:2px solid rgba(215,162,62,.5);
-}
-.photo-hint{font-size:.8rem;letter-spacing:.1em;text-transform:uppercase;color:rgba(234,241,244,.7)}
-.about-badge{
-  position:absolute;left:50%;transform:translateX(-50%);bottom:-18px;background:var(--white);border:1px solid var(--line);
-  border-radius:999px;padding:.6rem 1.2rem;box-shadow:var(--shadow);display:flex;flex-direction:column;text-align:center;white-space:nowrap;
-}
-.about-badge strong{font-family:"Fraunces",serif;color:var(--navy);font-size:1.05rem}
-.about-badge span{font-size:.78rem;color:var(--muted)}
-.about-copy p{color:var(--muted);max-width:34rem}
-.about-copy p strong{color:var(--navy-700)}
-.about-stats{display:flex;gap:1.6rem;flex-wrap:wrap;margin:1.6rem 0 1.8rem}
+.about-solo{max-width:52rem;margin:0 auto;text-align:center}
+.about-solo .about-copy p{color:var(--muted);margin-left:auto;margin-right:auto}
+.about-stats{display:flex;gap:1.6rem;flex-wrap:wrap;justify-content:center;margin:1.6rem 0 1.4rem}
 .about-stats div{display:flex;flex-direction:column}
 .about-stats strong{font-family:"Fraunces",serif;font-size:1.5rem;color:var(--teal);line-height:1.1}
 .about-stats span{font-size:.85rem;color:var(--muted)}
-.about-areas{background:var(--white);border:1px solid var(--line);border-left:3px solid var(--gold);border-radius:var(--radius-sm);padding:.9rem 1.1rem;font-size:.95rem;color:var(--muted);margin:0 0 1.6rem;max-width:34rem}
+.about-areas{background:var(--white);border:1px solid var(--line);border-left:3px solid var(--gold);border-radius:var(--radius-sm);padding:.9rem 1.1rem;font-size:.95rem;color:var(--muted);margin:0 auto 1.6rem;max-width:40rem;text-align:left}
 .about-areas strong{color:var(--navy-700)}
-.about-actions{display:flex;gap:.8rem;flex-wrap:wrap}
+.about-actions{display:flex;gap:.8rem;flex-wrap:wrap;justify-content:center}
+
+/* Meet the team */
+.team-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.4rem}
+.team-card{background:var(--white);border:1px solid var(--line);border-radius:var(--radius);padding:1.8rem 1.5rem;text-align:center;box-shadow:var(--shadow-sm);transition:.22s ease;display:flex;flex-direction:column;align-items:center}
+.team-card:hover{transform:translateY(-4px);box-shadow:var(--shadow)}
+.team-photo{width:132px;height:132px;border-radius:50%;overflow:hidden;border:4px solid var(--white);box-shadow:0 0 0 1px var(--line),var(--shadow-sm);margin-bottom:1.1rem;background:var(--cream-200)}
+.team-photo img{width:100%;height:100%;object-fit:cover;display:block}
+.team-photo--placeholder{display:flex;align-items:center;justify-content:center;background:linear-gradient(160deg,var(--navy),var(--navy-700));color:rgba(234,241,244,.65)}
+.team-photo--placeholder span{font-family:"Fraunces",serif;font-size:2.6rem;font-weight:700}
+.team-card h3{margin:0 0 .1rem;color:var(--navy)}
+.team-role{font-size:.85rem;font-weight:600;letter-spacing:.04em;color:var(--teal-600);text-transform:uppercase;margin:0 0 .8rem}
+.team-bio{font-size:.94rem;color:var(--muted);margin:0}
+.team-bio em{color:var(--navy-700);font-style:italic}
+.team-card--empty{border-style:dashed;background:rgba(255,255,255,.6)}
+.team-link{margin-top:.9rem;font-weight:600;font-size:.9rem;color:var(--teal-600)}
+.team-link:hover{color:var(--teal)}
 
 /* Service cards */
 .cards{display:grid;grid-template-columns:repeat(3,1fr);gap:1.2rem}
@@ -240,15 +226,15 @@ img{max-width:100%}
 
 /* Responsive */
 @media(max-width:960px){
-  .hero-grid,.approach-grid,.partner-grid,.contact-grid,.about-grid{grid-template-columns:1fr}
-  .cards{grid-template-columns:repeat(2,1fr)}
+  .hero-grid,.approach-grid,.partner-grid,.contact-grid{grid-template-columns:1fr}
+  .cards,.team-grid{grid-template-columns:repeat(2,1fr)}
   .trust-inner{grid-template-columns:1fr}
   .footer-inner{grid-template-columns:1fr}
-  .site-nav,.nav-cta{display:none}
-  .nav-toggle{display:flex;margin-left:auto}
-  .about-photo{max-width:360px}
+  .header-inner{flex-wrap:wrap;height:auto;padding-top:12px;padding-bottom:12px;gap:.6rem 1.2rem}
+  .site-nav{margin-left:0;width:100%;order:3;gap:1.1rem;flex-wrap:wrap}
+  .nav-cta{margin-left:auto}
 }
 @media(max-width:560px){
-  .cards,.field-row,.partner-perks{grid-template-columns:1fr}
+  .cards,.field-row,.partner-perks,.team-grid{grid-template-columns:1fr}
   .hero-actions .btn{flex:1}
 }
