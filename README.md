@@ -1,4 +1,4 @@
-# Meridian Legacy Planning — Website
+# Meridian Wealth Planning — Website
 
 A static one‑page website (HTML/CSS/JS). No build step required.
 
@@ -42,6 +42,6 @@ Then enable Pages as in Option A, step 4.
 ## Contact forms
 GitHub Pages cannot process form submissions server‑side. The forms currently open the
 visitor's email app as a fallback. To receive submissions directly in your inbox:
-1. Create a free form at https://formspree.io (send target: kunaljoshi01@gmail.com).
+1. Create a free form at https://formspree.io (set the send target to your preferred inbox).
 2. In `index.html`, replace `your-form-id` in BOTH `<form action="...">` tags with your
    Formspree form ID. Submissions will then arrive by email automatically.

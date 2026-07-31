@@ -41,18 +41,12 @@ forms.forEach(form => {
     const original = btn.textContent;
     const action = form.getAttribute('action') || '';
 
-    // If Formspree isn't configured yet, fall back to a mailto: link
+    // Email/form integration is not connected yet. Show a friendly confirmation
+    // without exposing any direct email address. (Wire up Formspree/backend later.)
     if (action.includes('your-form-id')) {
-      const data = new FormData(form);
-      const subject = data.get('_subject') || 'Website inquiry';
-      let body = '';
-      for (const [k, v] of data.entries()) {
-        if (k.startsWith('_')) continue;
-        body += `${k}: ${v}\n`;
-      }
-      window.location.href =
-        `mailto:kunaljoshi01@gmail.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
-      if (note) { note.textContent = 'Opening your email app to send…'; note.className = 'form-note success'; }
+      form.reset();
+      if (note) { note.textContent = 'Thank you! Our contact form isn\u2019t connected to email just yet — please reach us by phone in the meantime, and we\u2019ll have this live shortly.'; note.className = 'form-note success'; }
+      setTimeout(() => { if (note) { note.textContent = defaultNote; note.className = 'form-note'; } }, 8000);
       return;
     }
 
@@ -66,12 +60,12 @@ forms.forEach(form => {
       });
       if (res.ok) {
         form.reset();
-        if (note) { note.textContent = 'Thank you! Your message has been sent — I\'ll be in touch soon.'; note.className = 'form-note success'; }
+        if (note) { note.textContent = 'Thank you! Your message has been sent — we\'ll be in touch soon.'; note.className = 'form-note success'; }
       } else {
         throw new Error('Request failed');
       }
     } catch (err) {
-      if (note) { note.textContent = 'Something went wrong. Please email kunaljoshi01@gmail.com directly.'; note.className = 'form-note error'; }
+      if (note) { note.textContent = 'Something went wrong. Please try again, or reach us by phone.'; note.className = 'form-note error'; }
     } finally {
       btn.disabled = false;
       btn.textContent = original;

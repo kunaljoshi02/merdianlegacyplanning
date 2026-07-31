@@ -28,7 +28,8 @@ body{
   line-height:1.6;
   -webkit-font-smoothing:antialiased;
 }
-h1,h2,h3,h4{font-family:"Fraunces",Georgia,serif;line-height:1.15;color:var(--navy);margin:0 0 .5em}
+h1,h2,h3,h4{font-family:"Fraunces",Georgia,serif;line-height:1.15;color:var(--navy);margin:0 0 .5em;font-optical-sizing:none;font-variation-settings:"opsz" 30}
+.brand-text strong,.stat-num,.stat-card blockquote,.about-stats strong,.team-photo--placeholder span,.step-num{font-optical-sizing:none;font-variation-settings:"opsz" 30}
 h1{font-size:clamp(2.1rem,4.6vw,3.5rem);font-weight:600;letter-spacing:-.01em}
 h2{font-size:clamp(1.7rem,3.2vw,2.5rem);font-weight:600}
 h3{font-size:1.25rem;font-weight:600}
