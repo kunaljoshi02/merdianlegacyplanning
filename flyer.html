@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Meridian Wealth Planning — Flyer</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600;9..144,700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <style>
+    :root{
+      --navy:#0f2b46; --navy-700:#153a5e; --teal:#1f8a76; --gold:#d7a23e;
+      --cream:#f7f3ec; --cream-200:#efe8dc; --ink:#1c2833; --muted:#5b6b78;
+      --white:#fff; --line:#e4dccf;
+    }
+    *{box-sizing:border-box}
+    html,body{margin:0}
+    body{
+      font-family:"Inter",system-ui,-apple-system,Segoe UI,Roboto,sans-serif;
+      color:var(--ink); background:#dfe4e8; line-height:1.5;
+      -webkit-font-smoothing:antialiased; padding:24px;
+    }
+    h1,h2,h3,h4{font-family:"Fraunces",Georgia,serif;color:var(--navy);margin:0;
+      font-optical-sizing:none;font-variation-settings:"opsz" 30;line-height:1.12}
+
+    /* Letter page */
+    .page{
+      width:8.5in; min-height:11in; margin:0 auto; background:var(--cream);
+      position:relative; overflow:hidden; box-shadow:0 20px 60px -20px rgba(15,43,70,.5);
+      display:flex; flex-direction:column;
+    }
+
+    /* Header band */
+    .flyer-head{
+      background:linear-gradient(135deg,var(--navy) 0%,var(--navy-700) 60%,#1c4a72 100%);
+      color:var(--white); padding:.42in .6in .42in; position:relative;
+    }
+    .flyer-head::after{content:"";position:absolute;left:0;right:0;bottom:0;height:5px;
+      background:linear-gradient(90deg,var(--teal),var(--gold))}
+    .brand{display:flex;align-items:center;gap:12px}
+    .brand-mark{color:var(--gold)}
+    .brand-text strong{font-family:"Fraunces",Georgia,serif;font-weight:600;font-size:1.5rem;
+      color:var(--white);letter-spacing:.2px;font-optical-sizing:none;font-variation-settings:"opsz" 30;display:block;line-height:1.05}
+    .brand-text em{font-style:normal;font-size:.82rem;letter-spacing:.22em;text-transform:uppercase;
+      color:#cfe0da;display:block;margin-top:2px}
+    .eyebrow{color:var(--gold);font-weight:600;font-size:.78rem;letter-spacing:.16em;
+      text-transform:uppercase;margin:.26in 0 .1in}
+    .flyer-head h1{color:var(--white);font-size:1.9rem;font-weight:600;letter-spacing:-.01em}
+    .flyer-head .lead{color:#dbe6e2;font-size:.92rem;margin:.1in 0 0;max-width:6.4in}
+
+    /* Body */
+    .flyer-body{padding:.34in .6in .26in;flex:1;display:flex;flex-direction:column}
+    .section-label{font-size:.78rem;letter-spacing:.16em;text-transform:uppercase;
+      color:var(--teal);font-weight:700;margin-bottom:.16in}
+
+    .services{display:grid;grid-template-columns:repeat(2,1fr);gap:.13in .3in}
+    .svc{display:flex;gap:11px;align-items:flex-start}
+    .svc .dot{flex:none;width:30px;height:30px;border-radius:9px;
+      background:var(--cream-200);border:1px solid var(--line);display:flex;
+      align-items:center;justify-content:center;color:var(--teal)}
+    .svc h4{font-size:.98rem;font-weight:600;margin:0 0 2px}
+    .svc p{margin:0;font-size:.79rem;color:var(--muted);line-height:1.36}
+
+    /* Why band */
+    .why{margin-top:.2in;background:var(--white);border:1px solid var(--line);
+      border-radius:14px;padding:.16in .3in;display:flex;gap:.42in;
+      box-shadow:0 10px 26px -18px rgba(15,43,70,.3)}
+    .why div{flex:1}
+    .why h4{font-size:.98rem;font-weight:600;margin:0 0 4px;display:flex;align-items:center;gap:7px}
+    .why h4 .b{width:8px;height:8px;border-radius:50%;background:var(--gold)}
+    .why p{margin:0;font-size:.82rem;color:var(--muted);line-height:1.42}
+
+    /* Partner callout */
+    .partner{margin-top:.2in;background:linear-gradient(135deg,#12503f 0%,var(--teal) 100%);
+      color:#fff;border-radius:14px;padding:.16in .32in;display:flex;align-items:center;
+      gap:.3in;box-shadow:0 12px 30px -18px rgba(18,80,63,.6);position:relative;overflow:hidden}
+    .partner::after{content:"";position:absolute;top:0;bottom:0;right:0;width:6px;background:var(--gold)}
+    .partner .p-ic{flex:none;width:42px;height:42px;border-radius:11px;background:rgba(255,255,255,.14);
+      display:flex;align-items:center;justify-content:center;color:#fff}
+    .partner h4{color:#fff;font-size:1.12rem;font-weight:600;margin:0 0 3px}
+    .partner p{margin:0;font-size:.84rem;color:#dff0ea;line-height:1.42;max-width:5.2in}
+    .partner .p-tag{flex:none;margin-left:auto;background:var(--gold);color:#3a2a06;font-weight:700;
+      font-size:.74rem;letter-spacing:.05em;text-transform:uppercase;padding:.5rem .9rem;border-radius:999px}
+
+    /* Contact / QR footer */
+    .cta{margin-top:.2in;padding-top:0;display:flex;gap:.34in;align-items:stretch}
+    .cta-copy{flex:1;display:flex;flex-direction:column;justify-content:center}
+    .cta-copy h3{font-size:1.42rem;font-weight:600;margin:0 0 .06in}
+    .cta-copy .sub{color:var(--muted);font-size:.88rem;margin:0 0 .16in}
+    .contact-line{display:flex;align-items:center;gap:10px;font-size:1rem;
+      font-weight:600;color:var(--navy);margin-bottom:8px}
+    .contact-line .ic{width:26px;height:26px;border-radius:7px;background:var(--navy);
+      color:var(--white);display:flex;align-items:center;justify-content:center;flex:none}
+    .contact-line small{display:block;font-weight:500;font-size:.68rem;letter-spacing:.08em;
+      text-transform:uppercase;color:var(--muted)}
+    .qr-group{flex:none;display:flex;gap:.2in}
+    .qr-card{width:1.72in;text-align:center;background:var(--white);
+      border:1px solid var(--line);border-radius:14px;padding:.18in .14in;
+      box-shadow:0 12px 30px -18px rgba(15,43,70,.4);display:flex;flex-direction:column}
+    .qr-card img{width:1.32in;height:1.32in;display:block;margin:0 auto}
+    .qr-card p{margin:.1in 0 0;font-size:.78rem;font-weight:700;color:var(--navy);
+      letter-spacing:.02em;line-height:1.25}
+    .qr-card span{display:block;font-weight:500;color:var(--muted);font-size:.66rem;margin-top:3px;line-height:1.3}
+
+    /* Disclaimer */
+    .disclaimer{background:var(--navy);color:#b9c8d4;font-size:.64rem;line-height:1.45;
+      padding:.12in .6in;text-align:center;letter-spacing:.01em}
+    .disclaimer strong{color:#e7eef3;font-weight:600}
+
+    .print-hint{max-width:8.5in;margin:0 auto 16px;font-size:.85rem;color:#33475a;
+      display:flex;justify-content:space-between;align-items:center;gap:12px}
+    .print-hint button{font:inherit;font-weight:600;background:var(--navy);color:#fff;
+      border:0;border-radius:999px;padding:.5rem 1.1rem;cursor:pointer}
+
+    @media print{
+      body{background:#fff;padding:0}
+      .print-hint{display:none}
+      .page{box-shadow:none;width:8.5in;min-height:0;height:11in;overflow:hidden;margin:0}
+      @page{size:letter;margin:0}
+    }
+  </style>
+</head>
+<body>
+  <div class="print-hint">
+    <span>Print at Letter size (8.5&times;11), 100% scale, background graphics ON. Or “Save as PDF”.</span>
+    <button onclick="window.print()">Print / Save PDF</button>
+  </div>
+
+  <div class="page">
+    <!-- Header -->
+    <div class="flyer-head">
+      <div class="brand">
+        <span class="brand-mark" aria-hidden="true">
+          <svg viewBox="0 0 32 32" width="40" height="40" fill="none">
+            <path d="M16 2L4 8v8c0 7.2 5 11.8 12 14 7-2.2 12-6.8 12-14V8L16 2z" fill="currentColor" opacity="0.2"/>
+            <path d="M16 2L4 8v8c0 7.2 5 11.8 12 14 7-2.2 12-6.8 12-14V8L16 2z" stroke="currentColor" stroke-width="1.6"/>
+            <path d="M10 16l4 4 8-9" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </span>
+        <span class="brand-text"><strong>Meridian</strong><em>Wealth Planning</em></span>
+      </div>
+      <p class="eyebrow">Defensive planning &amp; tax-advantaged strategies</p>
+      <h1>Protect what you've built.<br />Plan for what's ahead.</h1>
+      <p class="lead">We help individuals and families build durable, tax-efficient plans — so your wealth is protected today and thoughtfully passed on tomorrow.</p>
+    </div>
+
+    <!-- Body -->
+    <div class="flyer-body">
+      <p class="section-label">How we help</p>
+      <div class="services">
+        <div class="svc"><span class="dot"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 12v6a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2v-6"/><path d="M2 7h20v5H2z"/><path d="M12 22V7"/><path d="M12 7C12 4 9 4 9 6s3 1 3 1z"/></svg></span>
+          <div><h4>Income Replacement</h4><p>Replace lost income and keep your family secure if you can no longer provide.</p></div></div>
+        <div class="svc"><span class="dot"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 10L12 5 2 10l10 5 10-5z"/><path d="M6 12v5c0 1 3 3 6 3s6-2 6-3v-5"/></svg></span>
+          <div><h4>Education Funding Alternatives</h4><p>Fund your children's education without derailing your own goals.</p></div></div>
+        <div class="svc"><span class="dot"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 21h18"/><path d="M5 21V10l7-5 7 5v11"/><path d="M9 21v-6h6v6"/></svg></span>
+          <div><h4>Estate Planning</h4><p>Pass wealth on efficiently and on your terms while minimizing taxes.</p></div></div>
+        <div class="svc"><span class="dot"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2v20"/><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg></span>
+          <div><h4>Retirement Income</h4><p>Build a reliable, tax-efficient income stream you won't outlive.</p></div></div>
+        <div class="svc"><span class="dot"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20.8 4.6a5.5 5.5 0 0 0-7.8 0L12 5.6l-1-1a5.5 5.5 0 0 0-7.8 7.8l1 1L12 21l7.8-7.6 1-1a5.5 5.5 0 0 0 0-7.8z"/></svg></span>
+          <div><h4>Long-Term Care</h4><p>Prepare for the cost of care while protecting your assets and loved ones.</p></div></div>
+        <div class="svc"><span class="dot"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg></span>
+          <div><h4>Disability Protection</h4><p>Safeguard your paycheck so a health setback doesn't become a financial one.</p></div></div>
+      </div>
+
+      <div class="why">
+        <div><h4><span class="b"></span>Protection first</h4><p>We start by defending against the risks that can derail a plan, then build toward growth.</p></div>
+        <div><h4><span class="b"></span>Tax-advantaged</h4><p>Strategies coordinated for tax efficiency across every stage of life. (Not tax advice.)</p></div>
+        <div><h4><span class="b"></span>No pressure</h4><p>Clear guidance in plain language — a relaxed conversation, never a hard sell.</p></div>
+      </div>
+
+      <div class="partner">
+        <span class="p-ic"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg></span>
+        <div>
+          <h4>Build a business with us</h4>
+          <p>We're growing a team of partners. If you're driven to help families and want a meaningful opportunity with mentorship, let's talk.</p>
+        </div>
+        <span class="p-tag">Partners wanted</span>
+      </div>
+
+      <!-- CTA + QR -->
+      <div class="cta">
+        <div class="cta-copy">
+          <h3>Let's start a conversation.</h3>
+          <p class="sub">Scan a code below, or reach out directly:</p>
+          <div class="contact-line"><span class="ic"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2 4.2 2 2 0 0 1 4 2h3a2 2 0 0 1 2 1.7c.1 1 .4 1.9.7 2.8a2 2 0 0 1-.5 2.1L8 9.9a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.4c.9.3 1.8.6 2.8.7A2 2 0 0 1 22 16.9z"/></svg></span>
+            <span><small>Call or text</small>+1 (732) 630-5923</span></div>
+          <div class="contact-line"><span class="ic"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M2 12h20"/><path d="M12 2a15 15 0 0 1 0 20 15 15 0 0 1 0-20z"/></svg></span>
+            <span><small>Visit</small>kunaljoshi02.github.io/merdianlegacyplanning</span></div>
+        </div>
+        <div class="qr-group">
+          <div class="qr-card">
+            <img src="qr-contact.png" alt="Scan to save Meridian Wealth Planning contact card" />
+            <p>Save our contact<span>Adds us to your phone</span></p>
+          </div>
+          <div class="qr-card">
+            <img src="qr-website.png" alt="Scan to visit the Meridian Wealth Planning website" />
+            <p>Visit our website<span>Services &amp; consultation</span></p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Disclaimer -->
+    <div class="disclaimer">
+      <strong>Meridian Wealth Planning</strong> provides financial planning and insurance strategies. This material is for informational purposes only and is <strong>not tax, legal, or investment advice</strong>. Consult a qualified professional regarding your specific situation.
+    </div>
+  </div>
+</body>
+</html>
