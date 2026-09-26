@@ -327,9 +327,12 @@
         </div>
 
         <!-- Client form -->
-        <form class="contact-form is-active" data-form="client" action="https://formspree.io/f/your-form-id" method="POST" novalidate>
-          <input type="hidden" name="_subject" value="New client inquiry — Meridian Wealth Planning" />
+        <form class="contact-form is-active" data-form="client" action="https://api.web3forms.com/submit" method="POST" novalidate>
+          <input type="hidden" name="access_key" value="YOUR_WEB3FORMS_ACCESS_KEY" />
+          <input type="hidden" name="subject" value="New client inquiry — Meridian Wealth Planning" />
+          <input type="hidden" name="from_name" value="Meridian Wealth Planning Website" />
           <input type="hidden" name="inquiry_type" value="Client" />
+          <input type="checkbox" name="botcheck" class="hp-field" style="display:none !important" tabindex="-1" autocomplete="off" aria-hidden="true" />
           <div class="field-row">
             <label class="field"><span>Full name *</span><input type="text" name="name" required placeholder="Jane Doe" /></label>
             <label class="field"><span>Email *</span><input type="email" name="email" required placeholder="jane@email.com" /></label>
@@ -353,9 +356,12 @@
         </form>
 
         <!-- Partner form -->
-        <form class="contact-form" data-form="partner" action="https://formspree.io/f/your-form-id" method="POST" novalidate>
-          <input type="hidden" name="_subject" value="New partner inquiry — Meridian Wealth Planning" />
+        <form class="contact-form" data-form="partner" action="https://api.web3forms.com/submit" method="POST" novalidate>
+          <input type="hidden" name="access_key" value="YOUR_WEB3FORMS_ACCESS_KEY" />
+          <input type="hidden" name="subject" value="New partner inquiry — Meridian Wealth Planning" />
+          <input type="hidden" name="from_name" value="Meridian Wealth Planning Website" />
           <input type="hidden" name="inquiry_type" value="Partner" />
+          <input type="checkbox" name="botcheck" class="hp-field" style="display:none !important" tabindex="-1" autocomplete="off" aria-hidden="true" />
           <div class="field-row">
             <label class="field"><span>Full name *</span><input type="text" name="name" required placeholder="Alex Rivera" /></label>
             <label class="field"><span>Email *</span><input type="email" name="email" required placeholder="alex@email.com" /></label>

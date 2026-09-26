@@ -23,7 +23,7 @@ document.querySelectorAll('[data-open-tab]').forEach(btn =>
   btn.addEventListener('click', () => activateTab(btn.dataset.openTab))
 );
 
-// Form handling — AJAX submit to Formspree with graceful fallback
+// Form handling — AJAX submit to Web3Forms with graceful fallback
 forms.forEach(form => {
   const note = form.querySelector('[data-note]');
   const defaultNote = note ? note.textContent : '';
@@ -40,10 +40,12 @@ forms.forEach(form => {
     const btn = form.querySelector('button[type="submit"]');
     const original = btn.textContent;
     const action = form.getAttribute('action') || '';
+    const keyField = form.querySelector('input[name="access_key"]');
+    const accessKey = keyField ? keyField.value : '';
 
-    // Email/form integration is not connected yet. Show a friendly confirmation
-    // without exposing any direct email address. (Wire up Formspree/backend later.)
-    if (action.includes('your-form-id')) {
+    // Not connected yet: access key placeholder still in place. Show a friendly
+    // confirmation without exposing any direct email address.
+    if (!accessKey || accessKey.indexOf('YOUR_WEB3FORMS') !== -1) {
       form.reset();
       if (note) { note.textContent = 'Thank you! Our contact form isn\u2019t connected to email just yet — please reach us by phone in the meantime, and we\u2019ll have this live shortly.'; note.className = 'form-note success'; }
       setTimeout(() => { if (note) { note.textContent = defaultNote; note.className = 'form-note'; } }, 8000);
@@ -58,7 +60,9 @@ forms.forEach(form => {
         body: new FormData(form),
         headers: { Accept: 'application/json' }
       });
-      if (res.ok) {
+      let ok = res.ok;
+      try { const data = await res.json(); ok = ok && data.success !== false; } catch (_) {}
+      if (ok) {
         form.reset();
         if (note) { note.textContent = 'Thank you! Your message has been sent — we\'ll be in touch soon.'; note.className = 'form-note success'; }
       } else {

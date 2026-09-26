@@ -40,8 +40,16 @@ Then enable Pages as in Option A, step 4.
 4. Enable **Enforce HTTPS** once the certificate is issued.
 
 ## Contact forms
-GitHub Pages cannot process form submissions server‑side. The forms currently open the
-visitor's email app as a fallback. To receive submissions directly in your inbox:
-1. Create a free form at https://formspree.io (set the send target to your preferred inbox).
-2. In `index.html`, replace `your-form-id` in BOTH `<form action="...">` tags with your
-   Formspree form ID. Submissions will then arrive by email automatically.
+GitHub Pages cannot process form submissions server‑side, so the forms hand off to
+[Web3Forms](https://web3forms.com) (free, no account) to deliver messages by email.
+To activate delivery to your inbox:
+1. Go to https://web3forms.com, enter **kunaljoshi@meridian-wealthplanning.com**, and click
+   Create Access Key. Web3Forms emails an access key (a UUID) to that mailbox — check it and
+   confirm/verify if prompted.
+2. In `index.html`, replace `YOUR_WEB3FORMS_ACCESS_KEY` in BOTH `<form>` blocks (the hidden
+   `access_key` field) with your key, then commit and push.
+
+Submissions then arrive automatically at the mailbox tied to the key. The access key is safe
+to keep in public client‑side code — it only permits sending to your verified address. A
+hidden `botcheck` honeypot field filters basic spam.
+
