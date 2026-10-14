@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Free Financial Education Session — Meridian Wealth Planning</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600;9..144,700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <style>
+    :root {
+      --navy:#0f2b46; --navy-700:#174467; --teal:#1f8a76; --gold:#d7a23e;
+      --cream:#f7f3ec; --cream-200:#efe8dc; --ink:#1c2833; --muted:#5b6b78;
+      --white:#fff; --line:#e4dccf;
+    }
+    * { box-sizing:border-box; }
+    html, body { margin:0; }
+    body {
+      padding:24px; background:#dfe4e8; color:var(--ink);
+      font-family:"Inter",system-ui,-apple-system,Segoe UI,Roboto,sans-serif;
+      -webkit-font-smoothing:antialiased;
+    }
+    h1, h2, h3 {
+      margin:0; font-family:"Fraunces",Georgia,serif; font-optical-sizing:none;
+      font-variation-settings:"opsz" 40; line-height:1.08;
+    }
+    .print-hint {
+      max-width:8.5in; margin:0 auto 16px; display:flex; justify-content:space-between;
+      align-items:center; gap:12px; color:#33475a; font-size:.85rem;
+    }
+    .print-hint button {
+      border:0; border-radius:999px; padding:.5rem 1.1rem; cursor:pointer;
+      background:var(--navy); color:#fff; font:600 .85rem "Inter",sans-serif;
+    }
+    .page {
+      width:8.5in; height:11in; margin:0 auto; overflow:hidden; position:relative;
+      display:flex; flex-direction:column; background:var(--cream);
+      box-shadow:0 20px 60px -20px rgba(15,43,70,.5);
+    }
+    .header {
+      position:relative; min-height:3.18in; padding:.38in .62in .32in;
+      color:#fff; overflow:hidden;
+      background:
+        radial-gradient(65% 120% at 86% 10%, #24608b 0%, rgba(36,96,139,0) 70%),
+        linear-gradient(135deg,#0a2035 0%,var(--navy) 50%,var(--navy-700) 100%);
+    }
+    .header::after {
+      content:""; position:absolute; left:0; right:0; bottom:0; height:6px;
+      background:linear-gradient(90deg,var(--teal),var(--gold));
+    }
+    .brand { display:flex; align-items:center; gap:11px; position:relative; z-index:2; }
+    .brand svg { color:var(--gold); }
+    .brand strong {
+      display:block; color:#fff; font:600 1.4rem/1 "Fraunces",Georgia,serif;
+      font-optical-sizing:none; font-variation-settings:"opsz" 30;
+    }
+    .brand span span {
+      display:block; margin-top:4px; color:#cfe0da; font-size:.65rem;
+      font-weight:600; letter-spacing:.25em; text-transform:uppercase;
+    }
+    .free {
+      display:inline-block; margin-top:.24in; padding:.38rem .74rem; border-radius:999px;
+      background:var(--gold); color:#382805; font-size:.72rem; font-weight:800;
+      letter-spacing:.1em; text-transform:uppercase; position:relative; z-index:2;
+    }
+    .header h1 {
+      max-width:5.6in; margin-top:.12in; color:#fff; font-size:2.26rem;
+      font-weight:600; letter-spacing:-.02em; position:relative; z-index:2;
+    }
+    .header .lead {
+      max-width:5.65in; margin:.1in 0 0; color:#dbe6e2; font-size:.94rem;
+      line-height:1.46; position:relative; z-index:2;
+    }
+    .headshot {
+      position:absolute; right:.55in; top:.54in; width:1.48in; height:1.48in;
+      border:4px solid var(--gold); border-radius:50%; object-fit:cover; object-position:center top;
+      background:var(--cream); box-shadow:0 12px 28px -10px rgba(0,0,0,.6); z-index:3;
+    }
+    .body {
+      flex:1; padding:.28in .62in .18in; display:flex; flex-direction:column;
+    }
+    .event-details {
+      display:grid; grid-template-columns:1fr 1.18fr; gap:.18in;
+    }
+    .detail {
+      min-height:1.02in; display:flex; gap:14px; align-items:center;
+      padding:.16in .18in; border:1px solid var(--line); border-radius:14px;
+      background:#fff; box-shadow:0 10px 26px -20px rgba(15,43,70,.45);
+    }
+    .detail .icon {
+      width:42px; height:42px; flex:none; display:flex; align-items:center; justify-content:center;
+      border-radius:12px; background:var(--cream-200); color:var(--teal);
+    }
+    .detail small {
+      display:block; margin-bottom:2px; color:var(--muted); font-size:.65rem;
+      font-weight:700; letter-spacing:.12em; text-transform:uppercase;
+    }
+    .detail strong { color:var(--navy); font-size:.94rem; line-height:1.35; }
+    .intro {
+      margin:.18in 0 .1in; text-align:center;
+    }
+    .intro h2 { color:var(--navy); font-size:1.36rem; font-weight:600; }
+    .intro p { margin:.05in auto 0; max-width:6.5in; color:var(--muted); font-size:.82rem; }
+    .topics {
+      display:grid; grid-template-columns:repeat(3,1fr); gap:.1in;
+    }
+    .topic {
+      min-height:.9in; padding:.13in .14in; border-radius:12px;
+      background:var(--cream-200); border:1px solid var(--line);
+    }
+    .topic strong { display:block; color:var(--navy); font:600 .89rem "Fraunces",Georgia,serif; }
+    .topic span { display:block; margin-top:3px; color:var(--muted); font-size:.7rem; line-height:1.35; }
+    .bottom {
+      display:grid; grid-template-columns:1fr 2.03in; gap:.28in; align-items:center;
+      margin-top:.18in; padding:.17in .2in .17in .28in; border-radius:16px;
+      color:#fff; background:linear-gradient(135deg,#12503f,var(--teal));
+      box-shadow:0 14px 30px -20px rgba(18,80,63,.7);
+    }
+    .bottom h3 { color:#fff; font-size:1.38rem; font-weight:600; }
+    .bottom p { margin:.06in 0 .1in; color:#dff0ea; font-size:.78rem; line-height:1.45; }
+    .contact { color:#fff; font-size:.76rem; font-weight:600; line-height:1.7; }
+    .contact span { color:#cce8df; font-weight:500; }
+    .qr {
+      display:flex; align-items:center; gap:.12in; padding:.1in;
+      border-radius:12px; background:#fff; color:var(--navy);
+    }
+    .qr img { width:1.14in; height:1.14in; display:block; }
+    .qr strong { display:block; font-size:.77rem; line-height:1.25; }
+    .qr span { display:block; margin-top:4px; color:var(--muted); font-size:.64rem; line-height:1.3; }
+    .note {
+      margin:.1in 0 0; color:var(--muted); text-align:center; font-size:.62rem; line-height:1.35;
+    }
+    .footer {
+      padding:.1in .62in; color:#b9c8d4; background:var(--navy);
+      text-align:center; font-size:.59rem; line-height:1.4;
+    }
+    .footer strong { color:#e7eef3; }
+    @media print {
+      body { padding:0; background:#fff; }
+      .print-hint { display:none; }
+      .page { margin:0; box-shadow:none; }
+      @page { size:letter; margin:0; }
+    }
+    body.export { padding:0; background:#fff; }
+    body.export .print-hint { display:none; }
+    body.export .page { margin:0; box-shadow:none; }
+  </style>
+</head>
+<body>
+  <div class="print-hint">
+    <span>Print at Letter size, 100% scale, background graphics ON — or save as PDF.</span>
+    <button onclick="window.print()">Print / Save PDF</button>
+  </div>
+
+  <main class="page">
+    <header class="header">
+      <div class="brand">
+        <svg viewBox="0 0 32 32" width="38" height="38" fill="none" aria-hidden="true">
+          <path d="M16 2L4 8v8c0 7.2 5 11.8 12 14 7-2.2 12-6.8 12-14V8L16 2z" fill="currentColor" opacity=".18"/>
+          <path d="M16 2L4 8v8c0 7.2 5 11.8 12 14 7-2.2 12-6.8 12-14V8L16 2z" stroke="currentColor" stroke-width="1.6"/>
+          <path d="M10 16l4 4 8-9" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+        <span><strong>Meridian</strong><span>Wealth Planning</span></span>
+      </div>
+      <span class="free">Free • No obligation</span>
+      <h1>You're invited to a Financial Education Session</h1>
+      <p class="lead">Join us for a relaxed, informative conversation designed to help you better understand the financial decisions that shape your family's future.</p>
+      <img class="headshot" src="headshot.png" alt="Kunal Joshi, Wealth Planning Advisor" />
+    </header>
+
+    <section class="body">
+      <div class="event-details">
+        <div class="detail">
+          <span class="icon" aria-hidden="true">
+            <svg width="23" height="23" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="17" rx="2"/><path d="M16 2v4M8 2v4M3 9h18"/><path d="M8 13h2M14 13h2M8 17h2"/></svg>
+          </span>
+          <div><small>Date &amp; time</small><strong>Sunday, October 25, 2026<br />4:00–6:00 PM</strong></div>
+        </div>
+        <div class="detail">
+          <span class="icon" aria-hidden="true">
+            <svg width="23" height="23" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 12-9 12S3 17 3 10a9 9 0 1 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+          </span>
+          <div><small>Venue</small><strong>51 Cragwood Road, Suite 204<br />South Plainfield, NJ</strong></div>
+        </div>
+      </div>
+
+      <div class="intro">
+        <h2>Practical education for life's important financial moments</h2>
+        <p>Bring your questions. Leave with greater clarity and practical ideas you can discuss with your own financial, tax, and legal professionals.</p>
+      </div>
+
+      <div class="topics">
+        <div class="topic"><strong>Retirement Income</strong><span>Creating reliable, tax-efficient income designed to last.</span></div>
+        <div class="topic"><strong>Income Protection</strong><span>Defending your family's lifestyle against the unexpected.</span></div>
+        <div class="topic"><strong>Long-Term Care</strong><span>Preparing for care costs while protecting family assets.</span></div>
+        <div class="topic"><strong>Estate Planning</strong><span>Passing on wealth thoughtfully, efficiently, and on your terms.</span></div>
+        <div class="topic"><strong>Education Funding</strong><span>Exploring alternatives without sacrificing retirement goals.</span></div>
+        <div class="topic"><strong>Tax-Advantaged Strategies</strong><span>Understanding approaches that may improve financial efficiency.</span></div>
+      </div>
+
+      <div class="bottom">
+        <div>
+          <h3>Reserve your seat today</h3>
+          <p>Space may be limited. Scan the QR code to register through our short Google Form.</p>
+          <div class="contact">
+            Kunal Joshi <span>• Wealth Planning Advisor</span><br />
+            +1 (732) 630-5923 <span>• meridian-wealthplanning.com</span>
+          </div>
+        </div>
+        <div class="qr">
+          <img src="event-registration-qr.png" alt="QR code to register for the financial education session" />
+          <div><strong>Scan to register</strong><span>Free registration<br />No obligation</span></div>
+        </div>
+      </div>
+
+      <p class="note">This is an educational session only. No products will be sold at the event, and attendance does not create an advisory relationship.</p>
+    </section>
+
+    <footer class="footer">
+      <strong>Meridian Wealth Planning</strong> provides financial education, planning, and insurance strategies. This event and its materials are for informational purposes only and are <strong>not tax, legal, or investment advice</strong>. Consult qualified professionals regarding your specific situation.
+    </footer>
+  </main>
+  <script>
+    if (new URLSearchParams(location.search).has("export")) {
+      document.body.classList.add("export");
+    }
+  </script>
+</body>
+</html>
