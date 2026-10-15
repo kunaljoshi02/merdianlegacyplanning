@@ -64,17 +64,12 @@
       letter-spacing:.1em; text-transform:uppercase; position:relative; z-index:2;
     }
     .header h1 {
-      max-width:5.6in; margin-top:.12in; color:#fff; font-size:2.26rem;
+      max-width:7.1in; margin-top:.12in; color:#fff; font-size:2.26rem;
       font-weight:600; letter-spacing:-.02em; position:relative; z-index:2;
     }
     .header .lead {
-      max-width:5.65in; margin:.1in 0 0; color:#dbe6e2; font-size:.94rem;
+      max-width:6.9in; margin:.1in 0 0; color:#dbe6e2; font-size:.94rem;
       line-height:1.46; position:relative; z-index:2;
-    }
-    .headshot {
-      position:absolute; right:.55in; top:.54in; width:1.48in; height:1.48in;
-      border:4px solid var(--gold); border-radius:50%; object-fit:cover; object-position:center top;
-      background:var(--cream); box-shadow:0 12px 28px -10px rgba(0,0,0,.6); z-index:3;
     }
     .body {
       flex:1; padding:.28in .62in .18in; display:flex; flex-direction:column;
@@ -97,10 +92,16 @@
     }
     .detail strong { color:var(--navy); font-size:.94rem; line-height:1.35; }
     .intro {
-      margin:.18in 0 .1in; text-align:center;
+      margin:.15in 0 .1in; padding:.12in .2in; text-align:left; border-radius:13px;
+      background:#fff; border-left:5px solid var(--gold);
+      box-shadow:0 10px 24px -22px rgba(15,43,70,.5);
     }
-    .intro h2 { color:var(--navy); font-size:1.36rem; font-weight:600; }
-    .intro p { margin:.05in auto 0; max-width:6.5in; color:var(--muted); font-size:.82rem; }
+    .intro h2 { color:var(--navy); font-size:1.18rem; font-weight:600; }
+    .intro p { margin:.04in 0 0; color:var(--muted); font-size:.79rem; line-height:1.45; }
+    .topics-label {
+      margin:0 0 .07in; color:var(--teal); font-size:.68rem; font-weight:800;
+      letter-spacing:.14em; text-transform:uppercase; text-align:center;
+    }
     .topics {
       display:grid; grid-template-columns:repeat(3,1fr); gap:.1in;
     }
@@ -165,7 +166,6 @@
       <span class="free">Free • No obligation</span>
       <h1>You're invited to a Financial Education Session</h1>
       <p class="lead">Join us for a relaxed, informative conversation designed to help you better understand the financial decisions that shape your family's future.</p>
-      <img class="headshot" src="headshot.png" alt="Kunal Joshi, Wealth Planning Advisor" />
     </header>
 
     <section class="body">
@@ -185,10 +185,11 @@
       </div>
 
       <div class="intro">
-        <h2>Practical education for life's important financial moments</h2>
-        <p>Bring your questions. Leave with greater clarity and practical ideas you can discuss with your own financial, tax, and legal professionals.</p>
+        <h2>Who we are</h2>
+        <p>We are licensed financial professionals on a mission to spread financial education one family at a time and remove their dependency on GoFundMe.</p>
       </div>
 
+      <p class="topics-label">What we'll cover</p>
       <div class="topics">
         <div class="topic"><strong>Retirement Income</strong><span>Creating reliable, tax-efficient income designed to last.</span></div>
         <div class="topic"><strong>Income Protection</strong><span>Defending your family's lifestyle against the unexpected.</span></div>
@@ -203,7 +204,7 @@
           <h3>Reserve your seat today</h3>
           <p>Space may be limited. Scan the QR code to register through our short Google Form.</p>
           <div class="contact">
-            Kunal Joshi <span>• Wealth Planning Advisor</span><br />
+            Kunal Joshi &amp; Raghuveer Surisetti <span>• Licensed Financial Professionals</span><br />
             +1 (732) 630-5923 <span>• meridian-wealthplanning.com</span>
           </div>
         </div>
