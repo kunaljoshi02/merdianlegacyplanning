@@ -43,7 +43,7 @@
       box-shadow:0 20px 60px -20px rgba(15,43,70,.5);
     }
     .header {
-      position:relative; min-height:3.18in; padding:.38in .62in .32in;
+      position:relative; min-height:1.9in; padding:.32in .62in .28in;
       color:#fff; overflow:hidden;
       background:
         radial-gradient(65% 120% at 86% 10%, #24608b 0%, rgba(36,96,139,0) 70%),
@@ -64,27 +64,48 @@
       font-weight:600; letter-spacing:.25em; text-transform:uppercase;
     }
     .free {
-      display:inline-block; margin-top:.24in; padding:.38rem .74rem; border-radius:999px;
+      display:inline-block; margin-top:.16in; padding:.34rem .7rem; border-radius:999px;
       background:var(--gold); color:#382805; font-size:.72rem; font-weight:800;
       letter-spacing:.1em; text-transform:uppercase; position:relative; z-index:2;
     }
     .header h1 {
-      max-width:7.1in; margin-top:.12in; color:#fff; font-size:2.26rem;
+      max-width:7.1in; margin-top:.1in; color:#fff; font-size:1.82rem;
       font-weight:600; letter-spacing:-.02em; position:relative; z-index:2;
     }
     .header .lead {
-      max-width:6.9in; margin:.1in 0 0; color:#dbe6e2; font-size:.94rem;
+      max-width:6.9in; margin:.07in 0 0; color:#dbe6e2; font-size:.86rem;
       line-height:1.46; position:relative; z-index:2;
     }
     .body {
-      flex:1; padding:.28in .62in .18in; display:flex; flex-direction:column;
+      flex:1; padding:.2in .62in .14in; display:flex; flex-direction:column;
     }
+    .questions {
+      display:grid; grid-template-columns:1fr 1fr; gap:.08in .11in;
+    }
+    .question {
+      min-height:.72in; display:flex; gap:10px; align-items:flex-start;
+      padding:.1in .12in; border-radius:11px; background:#fff; border:1px solid var(--line);
+      color:var(--navy); font-size:.72rem; font-weight:600; line-height:1.35;
+    }
+    .question:last-child { grid-column:1 / -1; min-height:.58in; }
+    .question .q {
+      width:23px; height:23px; flex:none; display:flex; align-items:center; justify-content:center;
+      border-radius:50%; color:#fff; background:var(--teal); font:700 .78rem "Fraunces",Georgia,serif;
+    }
+    .invitation {
+      margin:.11in 0; padding:.11in .2in; border-radius:13px; text-align:center;
+      color:#fff; background:linear-gradient(135deg,#12503f,var(--teal));
+    }
+    .invitation strong {
+      display:block; color:#fff; font:600 1.18rem "Fraunces",Georgia,serif;
+    }
+    .invitation span { display:block; margin-top:3px; color:#e5f3ee; font-size:.76rem; }
     .event-details {
       display:grid; grid-template-columns:1fr 1.18fr; gap:.18in;
     }
     .detail {
-      min-height:1.02in; display:flex; gap:14px; align-items:center;
-      padding:.16in .18in; border:1px solid var(--line); border-radius:14px;
+      min-height:.85in; display:flex; gap:12px; align-items:center;
+      padding:.12in .16in; border:1px solid var(--line); border-radius:13px;
       background:#fff; box-shadow:0 10px 26px -20px rgba(15,43,70,.45);
     }
     .detail .icon {
@@ -97,40 +118,27 @@
     }
     .detail strong { color:var(--navy); font-size:.94rem; line-height:1.35; }
     .intro {
-      margin:.15in 0 .1in; padding:.12in .2in; text-align:left; border-radius:13px;
+      margin:.11in 0 0; padding:.1in .18in; text-align:left; border-radius:12px;
       background:#fff; border-left:5px solid var(--gold);
       box-shadow:0 10px 24px -22px rgba(15,43,70,.5);
     }
-    .intro h2 { color:var(--navy); font-size:1.18rem; font-weight:600; }
-    .intro p { margin:.04in 0 0; color:var(--muted); font-size:.79rem; line-height:1.45; }
-    .topics-label {
-      margin:0 0 .07in; color:var(--teal); font-size:.68rem; font-weight:800;
-      letter-spacing:.14em; text-transform:uppercase; text-align:center;
-    }
-    .topics {
-      display:grid; grid-template-columns:repeat(3,1fr); gap:.1in;
-    }
-    .topic {
-      min-height:.9in; padding:.13in .14in; border-radius:12px;
-      background:var(--cream-200); border:1px solid var(--line);
-    }
-    .topic strong { display:block; color:var(--navy); font:600 .89rem "Fraunces",Georgia,serif; }
-    .topic span { display:block; margin-top:3px; color:var(--muted); font-size:.7rem; line-height:1.35; }
+    .intro h2 { color:var(--navy); font-size:1.05rem; font-weight:600; }
+    .intro p { margin:.03in 0 0; color:var(--muted); font-size:.72rem; line-height:1.4; }
     .bottom {
       display:grid; grid-template-columns:1fr 2.03in; gap:.28in; align-items:center;
-      margin-top:.18in; padding:.17in .2in .17in .28in; border-radius:16px;
+      margin-top:.11in; padding:.13in .18in .13in .24in; border-radius:14px;
       color:#fff; background:linear-gradient(135deg,#12503f,var(--teal));
       box-shadow:0 14px 30px -20px rgba(18,80,63,.7);
     }
-    .bottom h3 { color:#fff; font-size:1.38rem; font-weight:600; }
-    .bottom p { margin:.06in 0 .1in; color:#dff0ea; font-size:.78rem; line-height:1.45; }
-    .contact { color:#fff; font-size:.76rem; font-weight:600; line-height:1.7; }
+    .bottom h3 { color:#fff; font-size:1.25rem; font-weight:600; }
+    .bottom p { margin:.04in 0 .07in; color:#dff0ea; font-size:.72rem; line-height:1.4; }
+    .contact { color:#fff; font-size:.7rem; font-weight:600; line-height:1.6; }
     .contact span { color:#cce8df; font-weight:500; }
     .qr {
       display:flex; align-items:center; gap:.12in; padding:.1in;
       border-radius:12px; background:#fff; color:var(--navy);
     }
-    .qr img { width:1.14in; height:1.14in; display:block; }
+    .qr img { width:1.04in; height:1.04in; display:block; }
     .qr strong { display:block; font-size:.77rem; line-height:1.25; }
     .qr span { display:block; margin-top:4px; color:var(--muted); font-size:.64rem; line-height:1.3; }
     .note {
@@ -149,7 +157,7 @@
       .header::after { background:var(--teal) !important; border-right:2.8in solid var(--gold); }
       .free { background:var(--gold) !important; color:#382805 !important; }
       .detail, .intro, .qr { background:#fff !important; }
-      .topic { background:var(--cream-200) !important; }
+      .question, .detail, .intro, .qr { background:#fff !important; }
       .bottom { background:var(--teal) !important; }
       .footer { background:var(--navy) !important; }
       @page { size:letter; margin:0; }
@@ -176,11 +184,24 @@
         <span><strong>Meridian</strong><span>Wealth Planning</span></span>
       </div>
       <span class="free">Free • No obligation</span>
-      <h1>You're invited to a Financial Education Session</h1>
-      <p class="lead">Join us for a relaxed, informative conversation designed to help you better understand the financial decisions that shape your family's future.</p>
+      <h1>How prepared is your family?</h1>
+      <p class="lead">Take a moment to consider these important questions about protecting the people and future that matter most.</p>
     </header>
 
     <section class="body">
+      <div class="questions">
+        <div class="question"><span class="q">?</span><span>If something happened to you, how would your loved ones sustain themselves financially?</span></div>
+        <div class="question"><span class="q">?</span><span>If you became disabled, could you pay for long-term care without depleting your savings?</span></div>
+        <div class="question"><span class="q">?</span><span>Would your assets transfer seamlessly to your loved ones if something happened to you?</span></div>
+        <div class="question"><span class="q">?</span><span>Who would make financial and healthcare decisions for you if you could not make them yourself?</span></div>
+        <div class="question"><span class="q">?</span><span>How will you fund 25–30 years of retirement income in the most tax-efficient manner?</span></div>
+      </div>
+
+      <div class="invitation">
+        <strong>If you answered “No” or “Not sure” to any of these questions, this session is for you.</strong>
+        <span>You're invited to a relaxed, informative Financial Education Session designed to bring greater clarity to these important decisions.</span>
+      </div>
+
       <div class="event-details">
         <div class="detail">
           <span class="icon" aria-hidden="true">
@@ -199,16 +220,6 @@
       <div class="intro">
         <h2>Who we are</h2>
         <p>We are licensed financial professionals on a mission to spread financial education one family at a time and remove their dependency on GoFundMe.</p>
-      </div>
-
-      <p class="topics-label">What we'll cover</p>
-      <div class="topics">
-        <div class="topic"><strong>Retirement Income</strong><span>Creating reliable, tax-efficient income designed to last.</span></div>
-        <div class="topic"><strong>Income Protection</strong><span>Defending your family's lifestyle against the unexpected.</span></div>
-        <div class="topic"><strong>Long-Term Care</strong><span>Preparing for care costs while protecting family assets.</span></div>
-        <div class="topic"><strong>Estate Planning</strong><span>Passing on wealth thoughtfully, efficiently, and on your terms.</span></div>
-        <div class="topic"><strong>Education Funding</strong><span>Exploring alternatives without sacrificing retirement goals.</span></div>
-        <div class="topic"><strong>Tax-Advantaged Strategies</strong><span>Understanding approaches that may improve financial efficiency.</span></div>
       </div>
 
       <div class="bottom">
