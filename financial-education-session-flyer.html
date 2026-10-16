@@ -43,8 +43,8 @@
       box-shadow:0 20px 60px -20px rgba(15,43,70,.5);
     }
     .header {
-      position:relative; min-height:1.9in; padding:.32in .62in .28in;
-      color:#fff; overflow:hidden;
+      position:relative; min-height:2.08in; padding:.35in .62in .32in;
+      color:#fff; overflow:hidden; flex:none;
       background:
         radial-gradient(65% 120% at 86% 10%, #24608b 0%, rgba(36,96,139,0) 70%),
         linear-gradient(135deg,#0a2035 0%,var(--navy) 50%,var(--navy-700) 100%);
@@ -56,7 +56,7 @@
     .brand { display:flex; align-items:center; gap:11px; position:relative; z-index:2; }
     .brand svg { color:var(--gold); }
     .brand strong {
-      display:block; color:#fff; font:600 1.4rem/1 "Fraunces",Georgia,serif;
+      display:block; color:#fff; font:600 1.5rem/1 "Fraunces",Georgia,serif;
       font-optical-sizing:none; font-variation-settings:"opsz" 30;
     }
     .brand span span {
@@ -64,48 +64,48 @@
       font-weight:600; letter-spacing:.25em; text-transform:uppercase;
     }
     .free {
-      display:inline-block; margin-top:.16in; padding:.34rem .7rem; border-radius:999px;
-      background:var(--gold); color:#382805; font-size:.72rem; font-weight:800;
+      display:inline-block; margin-top:.18in; padding:.4rem .8rem; border-radius:999px;
+      background:var(--gold); color:#382805; font-size:.78rem; font-weight:800;
       letter-spacing:.1em; text-transform:uppercase; position:relative; z-index:2;
     }
     .header h1 {
-      max-width:7.1in; margin-top:.1in; color:#fff; font-size:1.82rem;
+      max-width:7.1in; margin-top:.12in; color:#fff; font-size:2.08rem;
       font-weight:600; letter-spacing:-.02em; position:relative; z-index:2;
     }
     .header .lead {
-      max-width:6.9in; margin:.07in 0 0; color:#dbe6e2; font-size:.86rem;
+      max-width:6.9in; margin:.08in 0 0; color:#dbe6e2; font-size:.94rem;
       line-height:1.46; position:relative; z-index:2;
     }
     .body {
-      flex:1; padding:.2in .62in .14in; display:flex; flex-direction:column;
+      flex:1; padding:.22in .62in .14in; display:flex; flex-direction:column;
     }
     .questions {
       display:grid; grid-template-columns:1fr 1fr; gap:.08in .11in;
     }
     .question {
-      min-height:.72in; display:flex; gap:10px; align-items:flex-start;
-      padding:.1in .12in; border-radius:11px; background:#fff; border:1px solid var(--line);
-      color:var(--navy); font-size:.77rem; font-weight:600; line-height:1.35;
+      min-height:.81in; display:flex; gap:12px; align-items:flex-start;
+      padding:.12in .15in; border-radius:12px; background:#fff; border:1px solid var(--line);
+      color:var(--navy); font-size:.84rem; font-weight:600; line-height:1.37;
     }
-    .question:last-child { grid-column:1 / -1; min-height:.58in; }
+    .question:last-child { grid-column:1 / -1; min-height:.66in; }
     .question .q {
-      width:23px; height:23px; flex:none; display:flex; align-items:center; justify-content:center;
-      border-radius:50%; color:#fff; background:var(--teal); font:700 .78rem "Fraunces",Georgia,serif;
+      width:27px; height:27px; flex:none; display:flex; align-items:center; justify-content:center;
+      border-radius:50%; color:#fff; background:var(--teal); font:700 .88rem "Fraunces",Georgia,serif;
     }
     .invitation {
-      margin:.11in 0; padding:.11in .2in; border-radius:13px; text-align:center;
+      margin:.11in 0; padding:.14in .23in; border-radius:14px; text-align:center;
       color:#fff; background:linear-gradient(135deg,#12503f,var(--teal));
     }
     .invitation strong {
-      display:block; margin-top:4px; color:#fff; font:600 1.18rem "Fraunces",Georgia,serif;
+      display:block; margin-top:5px; color:#fff; font:600 1.34rem "Fraunces",Georgia,serif;
     }
-    .invitation .prompt { display:block; color:#e5f3ee; font-size:.8rem; font-weight:600; }
+    .invitation .prompt { display:block; color:#e5f3ee; font-size:.9rem; font-weight:600; }
     .event-details {
       display:grid; grid-template-columns:1fr 1.18fr; gap:.18in;
     }
     .detail {
-      min-height:.85in; display:flex; gap:12px; align-items:center;
-      padding:.12in .16in; border:1px solid var(--line); border-radius:13px;
+      min-height:.98in; display:flex; gap:14px; align-items:center;
+      padding:.15in .18in; border:1px solid var(--line); border-radius:14px;
       background:#fff; box-shadow:0 10px 26px -20px rgba(15,43,70,.45);
     }
     .detail .icon {
@@ -116,33 +116,33 @@
       display:block; margin-bottom:2px; color:var(--muted); font-size:.65rem;
       font-weight:700; letter-spacing:.12em; text-transform:uppercase;
     }
-    .detail strong { color:var(--navy); font-size:.94rem; line-height:1.35; }
+    .detail strong { color:var(--navy); font-size:1.02rem; line-height:1.35; }
     .intro {
-      margin:.11in 0 0; padding:.1in .18in; text-align:left; border-radius:12px;
+      margin:.13in 0 0; padding:.14in .2in; text-align:left; border-radius:13px;
       background:#fff; border-left:5px solid var(--gold);
       box-shadow:0 10px 24px -22px rgba(15,43,70,.5);
     }
-    .intro h2 { color:var(--navy); font-size:1.05rem; font-weight:600; }
-    .intro p { margin:.03in 0 0; color:var(--muted); font-size:.78rem; line-height:1.4; }
+    .intro h2 { color:var(--navy); font-size:1.18rem; font-weight:600; }
+    .intro p { margin:.04in 0 0; color:var(--muted); font-size:.86rem; line-height:1.43; }
     .bottom {
       display:grid; grid-template-columns:1fr 2.03in; gap:.28in; align-items:center;
-      margin-top:.11in; padding:.13in .18in .13in .24in; border-radius:14px;
+      margin-top:.13in; padding:.16in .2in .16in .26in; border-radius:15px;
       color:#fff; background:linear-gradient(135deg,#12503f,var(--teal));
       box-shadow:0 14px 30px -20px rgba(18,80,63,.7);
     }
-    .bottom h3 { color:#fff; font-size:1.25rem; font-weight:600; }
-    .bottom p { margin:.04in 0 .07in; color:#dff0ea; font-size:.72rem; line-height:1.4; }
-    .contact { color:#fff; font-size:.7rem; font-weight:600; line-height:1.6; }
+    .bottom h3 { color:#fff; font-size:1.42rem; font-weight:600; }
+    .bottom p { margin:.05in 0 .08in; color:#dff0ea; font-size:.8rem; line-height:1.4; }
+    .contact { color:#fff; font-size:.77rem; font-weight:600; line-height:1.65; }
     .contact span { color:#cce8df; font-weight:500; }
     .qr {
       display:flex; align-items:center; gap:.12in; padding:.1in;
       border-radius:12px; background:#fff; color:var(--navy);
     }
-    .qr img { width:1.04in; height:1.04in; display:block; }
-    .qr strong { display:block; font-size:.77rem; line-height:1.25; }
-    .qr span { display:block; margin-top:4px; color:var(--muted); font-size:.64rem; line-height:1.3; }
+    .qr img { width:1.16in; height:1.16in; display:block; }
+    .qr strong { display:block; font-size:.84rem; line-height:1.25; }
+    .qr span { display:block; margin-top:4px; color:var(--muted); font-size:.7rem; line-height:1.3; }
     .note {
-      margin:.1in 0 0; color:var(--muted); text-align:center; font-size:.62rem; line-height:1.35;
+      margin:.13in 0 .03in; color:var(--muted); text-align:center; font-size:.68rem; line-height:1.4;
     }
     .footer {
       padding:.1in .62in; color:#b9c8d4; background:var(--navy);
@@ -185,7 +185,7 @@
       </div>
       <span class="free">Free • No obligation</span>
       <h1>How prepared are you and your family?</h1>
-      <p class="lead">Take a moment to consider these important questions about protecting the people and future that matter most.</p>
+      <p class="lead">Consider these important questions about protecting the people and future that matter most.</p>
     </header>
 
     <section class="body">
